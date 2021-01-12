@@ -27,7 +27,7 @@ Import the project as a Maven project/spring-boot project to your IDE, wait for 
     ...
 
 
-start the spring-boot application and it will create the DB for you. After starting for the first time, change the `create` property to `none` like this:
+start the spring-boot application and it will create the tables for you. After starting for the first time, change the `create` property to `none` like this:
 
     ...
     
