@@ -19,10 +19,10 @@ then start the development server at `localhost:4200`. using this command on the
 Create a Postgres Database named `url_shortener`, with the owner being the `postgres` and password being `root`
 
 #### spring-boot project
-Import the project as a Maven project/spring-boot project to your IDE and just change some properties under the `urlshortener/src/main/resources/application.properties`
+Import the project as a Maven project/spring-boot project to your IDE, wait for the dependencies to be downloaded and just change the `spring.jpa.hibernate.ddl-auto` under the `urlshortener/src/main/resources/application.properties`
     
     ...
-
+    /* This properties controls whether or not the hibernate should generate the DATABASE tables and relations */
     spring.jpa.hibernate.ddl-auto=create
     ...
 
@@ -30,13 +30,14 @@ Import the project as a Maven project/spring-boot project to your IDE and just c
 start the spring-boot application and it will create the DB for you. After starting for the first time, change the `create` property to `none` like this:
 
     ...
+    
     spring.jpa.hibernate.ddl-auto=none
     ...
 
  now just run the spring-boot application and it should be all set-up.
 
 
-The backend was done only using the idea IDE, and if you have it should be easier to set up everything. But I guess that you can just open in another IDE and just run the spring-boot application normally.
+The backend was done only using the idea IDE, if you use it, will probably be easier to set up everything. But I guess that you can just open in another IDE and just run the spring-boot application normally.
 
 ### production server
 
