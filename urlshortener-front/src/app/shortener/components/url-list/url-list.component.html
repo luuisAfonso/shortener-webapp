@@ -1,0 +1,10 @@
+<nb-card status="basic">
+    <nb-card-header>Minhas urls</nb-card-header>
+    <nb-card-body>
+        <nb-list nbInfiniteList [threshold]="500" (bottomThreshold)="loadNext()">
+            <nb-list-item *ngFor="let url of urls">
+                <ngx-url-item [url]="url"></ngx-url-item>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+</nb-card>

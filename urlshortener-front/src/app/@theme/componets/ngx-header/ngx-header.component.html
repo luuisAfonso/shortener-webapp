@@ -1,0 +1,11 @@
+<section class="logo" (click)="goToHome()">
+    <nb-icon icon="flash" status="info"></nb-icon>
+    <strong style="font-size: 19px">YouShort</strong>
+</section>
+<section id="userStatus">
+    <p *ngIf="!authenticated"><strong><a class="text-link" routerLink="/auth/login">Logar</a></strong></p>
+    <div *ngIf="authenticated">
+        <p><strong>{{userMail}}</strong></p>
+        <nb-icon (click)="logout()" class="logout-icon" icon="log-out-outline"></nb-icon>
+    </div>
+</section>

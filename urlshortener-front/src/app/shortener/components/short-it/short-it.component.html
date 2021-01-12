@@ -1,0 +1,39 @@
+<nb-card status="info">
+  <nb-card-header>Pronto para encurtar suas urls?</nb-card-header>
+  <nb-card-body>
+    <section>
+      <label><strong>Site original</strong></label>
+      <div class="shake">
+        <input
+        [formControl]="originalUrl"
+        (submit)="shortUrl()" 
+        [status]="originalUrl.dirty ? (originalUrl.invalid  ? 'danger' : 'success') : 'basic'"
+        nbInput
+        >
+        <button (click)="shortUrl()" status="primary" nbButton><nb-icon icon="checkmark-outline"></nb-icon> </button>
+      </div>
+    </section>
+    <ng-container *ngIf="error != ''">
+      <p class="error-message">
+        {{error}}
+      </p>
+    </ng-container>
+    <section>
+      <label><strong>Url encurtada</strong></label>
+      <div>
+        <input (click)="copyShortUrlToClipboard()" [ngModel]="shortedUrl" class="result" readonly nbInput>
+        <button (click)="copyShortUrlToClipboard()" status="primary" nbButton><nb-icon icon="copy-outline"></nb-icon> </button>
+      </div>
+    </section>
+    <ng-container *ngIf="info != ''">
+      <p class="info-message">
+        {{info}}
+      </p>
+    </ng-container>
+  </nb-card-body>
+  <nb-card-footer *ngIf="!authenticated">
+    Já tem uma conta? <a class="text-link" routerLink="../auth/login">Log in</a>.
+    Caso não, <a class="text-link" routerLink="../auth/register">Registre-se</a> e tenha o histórico de suas urls encurtadas.
+  </nb-card-footer>
+</nb-card>
+<app-url-list [subject]="newUrlSubject.asObservable()" [userEmail]="userEmail" *ngIf="authenticated"></app-url-list>

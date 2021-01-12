@@ -1,0 +1,51 @@
+@import '../../../../themes.scss';
+
+$input-height: 60px;
+$font-size: 20px;
+$button-width: $input-height;
+
+nb-card-body {
+    flex-direction: column;
+}
+
+.error-message {
+    color: nb-theme(color-danger-600);
+    padding-left: 40px;
+}
+
+.info-message {
+    color: nb-theme(color-info-600);
+    padding-left: 40px;
+}
+
+section {
+    font-size: font-size;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px;
+    div {
+        width: 100%;
+        margin-top: 10px;
+        flex: 1;
+        display: flex;
+        input {
+            flex: 1;
+            height: $input-height;
+            vertical-align: top;
+            border-radius: .25rem 0 0 .25rem;
+            border-right: 0;
+            font-size: $font-size;
+            max-width: none !important;
+        }
+        .result {
+            cursor: pointer !important;
+        }
+        button {
+            height: $input-height;
+            width: $button-width;
+            border-radius: 0 .25rem .25rem 0;
+        }
+    }
+}

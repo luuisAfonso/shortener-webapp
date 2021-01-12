@@ -1,0 +1,24 @@
+:host{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    section {
+        align-self: center;
+    }
+}
+
+.logout-icon {
+    margin-top: 1px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+div {
+    display: flex;
+    align-items: center;
+}
